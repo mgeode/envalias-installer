@@ -8,8 +8,13 @@ Aliases for all systems
 
 #### opt/
 Place for special aliases
-- opt/linux/
-- opt/osx/
-- opt/winodws/
-- opt/private/
+- linux.alias
+This Aliases working only on Linux
+- osx.alias
+This Aliases working only on OSX
+- winodws.alias
+Only Windows aliases
+- global.exports
+Set your Exports
+- private/
 Write your personal aliases here.
