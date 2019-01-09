@@ -1,0 +1,7 @@
+
+# Openshift
+alias ocl="oc login"
+alias ocls="oc projects"
+alias oc-set-ns="oc project"
+alias oc-ps="oc pods"
+alias oc-ps-g="oc pods|grep $1"

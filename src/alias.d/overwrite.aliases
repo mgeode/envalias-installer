@@ -1,0 +1,29 @@
+
+# Make some of the file manipulation programs verbose
+alias mv="mv -v"
+alias rm="rm -vi"
+alias cp="cp -v"
+alias ps="ps -exf"
+alias mkdir="mkdir -p"
+
+# Overwrite list ls
+alias ll="ls -la"
+
+# Prints disk usage in human readable form
+alias d="du -sh"
+
+# Clear the screen of your clutter
+alias c="clear"
+alias cl="clear;ls;pwd"
+
+# GREP Motifications
+alias grep="grep --color"
+alias grepp="grep -P --color"
+
+# COUNTINGS
+alias du-sum="du -sh"
+alias du-detail="du -ach | sort -h"
+alias df="df -ah"
+
+# WGET
+alias wget='wget -c'

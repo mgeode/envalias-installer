@@ -1,0 +1,5 @@
+
+# DATE
+alias now='date +"%T"'
+alias nowtime=now
+alias nowdate='date +"%Y-%m-%d"'

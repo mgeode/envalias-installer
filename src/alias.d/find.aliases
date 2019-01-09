@@ -1,0 +1,8 @@
+
+# Files
+alias fhere="find . -name "
+alias fold="find . -mtime "
+alias fsize="find . -size +"
+
+# Prozess
+alias psid="ps -ef | grep $1 | grep -v grep | awk '{ print $2 }'"

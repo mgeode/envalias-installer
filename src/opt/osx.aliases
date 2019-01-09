@@ -1,0 +1,3 @@
+alias getos="echo osx"
+alias frm='find . -name '\''.DS_Store'\'' -exec rm -f {} \;'
+alias rm_dsstore=frm
