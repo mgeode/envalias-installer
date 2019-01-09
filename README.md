@@ -20,7 +20,7 @@ Aliases for all systems
 Place for special aliases
 - linux.alias: This Aliases working only on Linux
 - osx.alias: This Aliases working only on OSX
-- winodws.alias: Only Windows aliases
+- windows.alias: Only Windows aliases
 - global.exports: Set your Exports
 - private.aliases: Write your personal aliases here.
 
