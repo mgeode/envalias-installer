@@ -3,10 +3,10 @@ Installing different Aliases on unixbased Environments as Linux, MacOSx or Windo
 
 ## Strukture
 
-### alias.d/
+#### alias.d/
 Aliases for all systems
 
-### opt/
+#### opt/
 Place for special aliases
 - opt/linux/
 - opt/osx/
