@@ -2,10 +2,13 @@
 # GIT
 alias git_add_comment="git add * && git commit -m \"$1\" && git push"
 alias git_add="git add * && git commit -m \"Added by $USER at $(date)\" && git push"
+
+alias git_setter="git_set_user && git_set_credits"
 alias git_set_user="git config --global user.name \"$USER\" && git config --global user.email \"${USERMAIL}\""
 alias git_set_credits="git config credential.helper store"
 alias git_set_ssloff="git config http.sslVerify false"
+alias git_set_remote="git remote set-url origin https://$1@github.com/$2"
+
 alias git_overwrite="git fetch --all && git reset --hard origin/master && git pull origin master"
-alias git_setter="git_set_user && git_set_credits"
-alias git-remote="git remote set-url origin https://$1@github.com/$2"
+
 alias git_ls="git log --pretty=format:'{%n  \"commit\": \"%H\",%n  \"abbreviated_commit\": \"%h\",%n  \"tree\": \"%T\",%n  \"abbreviated_tree\": \"%t\",%n  \"parent\": \"%P\",%n  \"abbreviated_parent\": \"%p\",%n  \"refs\": \"%D\",%n  \"encoding\": \"%e\",%n  \"subject\": \"%s\",%n  \"sanitized_subject_line\": \"%f\",%n  \"body\": \"%b\",%n  \"commit_notes\": \"%N\",%n  \"verification_flag\": \"%G?\",%n  \"signer\": \"%GS\",%n  \"signer_key\": \"%GK\",%n  \"author\": {%n    \"name\": \"%aN\",%n    \"email\": \"%aE\",%n    \"date\": \"%aD\"%n  },%n " \"commiter\": {%n    \"name\": \"%cN\",%n    \"email\": \"%cE\",%n    \"date\": \"%cD\"%n  }%n},'
