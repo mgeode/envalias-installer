@@ -25,12 +25,3 @@ Location for non-public stuff
 #### os/
 Location for operating system dependent definitions
 
-
-Place for OS special aliases
-- linux.alias: This Aliases working only on Linux
-- osx.alias: This Aliases working only on OSX
-- windows.alias: Only Windows aliases
-- global.exports: Set your Exports
-- private.aliases: Write your personal aliases here.
-
-
