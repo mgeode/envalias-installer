@@ -1,0 +1,51 @@
+HOMELAN_IP=${HOMELAN_IP:-"192.168.1"}
+
+# PROXY
+proxyEnable() {
+    export HTTP_PROXY=proxy:8080
+    export HTTPS_PROXY=proxy:8080
+    export ALL_PROXY=proxy:8080
+    export NO_PROXY=localhost
+    npm config set registry "https://npm-repo/"
+    npm config set proxy "http://proxy:8080"
+    npm config set https-proxy "http://proxy:8080"
+    proxyStatus
+}
+proxyDisable() {
+    unset HTTP_PROXY
+    unset HTTPS_PROXY
+    unset ALL_PROXY
+    unset NO_PROXY
+    npm config delete proxy
+    npm config delete https-proxy
+    npm config delete registry
+    proxyStatus
+}
+proxyStatus() {
+  STATUS="enabled [+]"
+  if [ -z "${HTTP_PROXY}" ];then
+    STATUS="disabled [-]"
+  fi
+
+  echo " * Proxy-Settings are ${STATUS}!";
+}
+
+initProxy() {
+  #IF_HOMELAN
+  if [  "$(ifconfig |grep ${HOMELAN_IP}|grep -v grep|awk '{print $1}')" = "inet" ]; then
+    proxyDisable
+  else
+    proxyEnable
+  fi
+}
+
+toggleProxy() {
+  if [ -z "${HTTP_PROXY}" ];then
+    proxyEnable
+  else
+    proxyDisable
+ fi
+}
+alias proxy=toggleProxy
+initProxy
+
