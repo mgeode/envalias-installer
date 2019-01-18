@@ -14,14 +14,20 @@ fi
 
 mkdir -p ${W_DIR}
 cp -f src/alias.d/*.aliases ${W_DIR}/
-cp -f src/opt/private.aliases ${W_DIR}/
-cp -f src/opt/${OS_TAG}.aliases ${W_DIR}/
+cp -f src/os/${OS_TAG}.aliases ${W_DIR}/
 
-echo -e "\n\n## EXPORTS" > ${TARGET_FILE}
-cat src/opt/*.exports >> ${TARGET_FILE}
+echo -e "\n\n#### EXPORTS" > ${TARGET_FILE}
+cat src/exports.d/*.exports >> ${TARGET_FILE}
 echo "" >> ${TARGET_FILE}
-echo -e "\n## ALIASES" >> ${TARGET_FILE}
+
+echo -e "\n\n#### PRIVATES" > ${TARGET_FILE}
+cat src/private.d/*.aliases >> ${TARGET_FILE}
+echo "" >> ${TARGET_FILE}
+
+echo -e "\n#### ALIASES" >> ${TARGET_FILE}
 cat ${W_DIR}/*.aliases >> ${TARGET_FILE}
+cat src/alias.d/*.aliases >> ${TARGET_FILE}
+cat src/os/${OS_TAG}.aliases >> ${TARGET_FILE}
 echo "" >> ${TARGET_FILE}
 
 if [ $(cat /etc/profile | grep bash.aliases| wc -l) -eq 0 ]; then
