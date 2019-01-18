@@ -14,9 +14,3 @@ alias firewall=iptlist
 
 # DNS
 alias {hostname2ip,h2ip}='dig +short'
-
-# Mac DHCP service
-if [ -n "$OS_MAC" ]; then
-  alias {dhcpup,dhcp-start}='sudo /bin/launchctl load -w /System/Library/LaunchDaemons/bootps.plist'
-  alias {dhcpdn,dhcp-stop}='sudo /bin/launchctl unload -w /System/Library/LaunchDaemons/bootps.plist'
-fi
