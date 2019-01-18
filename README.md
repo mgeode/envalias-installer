@@ -22,6 +22,9 @@ Location for export definition. Must end on *.export
 #### private.d/
 Location for non-public stuff
 
+#### scripts.d/
+Location for scripts
+
 #### os/
 Location for operating system dependent definitions
 
