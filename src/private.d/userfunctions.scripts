@@ -1,0 +1,17 @@
+
+# PROXY
+switchUserA() {
+	export USER=$USER_A
+}
+switchUserB() {
+	export USER=$USER_B
+}
+
+toggleUser() {
+  if [ "${USER_A}" = "${USER} ];then
+    switchUserB
+  else
+    switchUserA
+ fi
+}
+
