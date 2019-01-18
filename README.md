@@ -14,7 +14,7 @@ The Installation add a entry in your **/etc/profile** and create on new file **/
 ## Strukture
 
 #### alias.d/
-Aliases for all systems. Must end on *.alias
+Aliases for all systems. Must end on *.aliases
 
 #### exports.d/
 Location for export definition. Must end on *.export 
