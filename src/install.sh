@@ -20,6 +20,10 @@ echo -e "\n\n#### PRIVATES" > ${TARGET_FILE}
 cat src/private.d/*.aliases >> ${TARGET_FILE}
 echo "" >> ${TARGET_FILE}
 
+echo -e "\n\n#### SCRIPTS" > ${TARGET_FILE}
+cat src/scripts.d/* >> ${TARGET_FILE}
+echo "" >> ${TARGET_FILE}
+
 echo -e "\n#### ALIASES" >> ${TARGET_FILE}
 cat ${W_DIR}/*.aliases >> ${TARGET_FILE}
 cat src/alias.d/*.aliases >> ${TARGET_FILE}
