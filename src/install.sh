@@ -12,10 +12,6 @@ elif [ $UNAME_S = "Linux" ];then
     OS_TAG=linux
 fi
 
-mkdir -p ${W_DIR}
-cp -f src/alias.d/*.aliases ${W_DIR}/
-cp -f src/os/${OS_TAG}.aliases ${W_DIR}/
-
 echo -e "\n\n#### EXPORTS" > ${TARGET_FILE}
 cat src/exports.d/*.exports >> ${TARGET_FILE}
 echo "" >> ${TARGET_FILE}
@@ -35,6 +31,5 @@ if [ $(cat /etc/profile | grep bash.aliases| wc -l) -eq 0 ]; then
     echo ". ${TARGET_FILE}" >>/etc/profile
 fi
 
-rm -Rf ${W_DIR}
 echo "Finishing setup envs"
 cat ${TARGET_FILE}
