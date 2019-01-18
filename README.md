@@ -14,10 +14,19 @@ The Installation add a entry in your **/etc/profile** and create on new file **/
 ## Strukture
 
 #### alias.d/
-Aliases for all systems
+Aliases for all systems. Must end on *.alias
 
-#### opt/
-Place for special aliases
+#### exports.d/
+Location for export definition. Must end on *.export 
+
+#### private.d/
+Location for non-public stuff
+
+#### os/
+Location for operating system dependent definitions
+
+
+Place for OS special aliases
 - linux.alias: This Aliases working only on Linux
 - osx.alias: This Aliases working only on OSX
 - windows.alias: Only Windows aliases
