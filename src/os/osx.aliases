@@ -1,3 +1,9 @@
 alias getos="echo osx"
 alias frm='find . -name '\''.DS_Store'\'' -exec rm -f {} \;'
 alias rm_dsstore=frm
+
+
+# Mac DHCP service
+alias {dhcpup,dhcp-start}='sudo /bin/launchctl load -w /System/Library/LaunchDaemons/bootps.plist'
+alias {dhcpdn,dhcp-stop}='sudo /bin/launchctl unload -w /System/Library/LaunchDaemons/bootps.plist'
+alias dhcp-restart='sudo dhcp-stop && sudo dhcp-start'
