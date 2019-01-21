@@ -28,3 +28,48 @@ Location for scripts
 #### os/
 Location for operating system dependent definitions
 
+
+### Installing MAKE
+#### Linux
+```
+  apt-get install -g make
+  g++ -v
+```
+
+#### Cygwin
+Auswahl nachstehender Tools im Installer:
+```
+Find the "Devel" (development)
+g++ -v
+```
+
+#### OSX
+```
+  xcode-select --install
+
+  ls -la /Library/Developer/CommandLineTools/
+
+  ls -la /Library/Developer/CommandLineTools/usr/bin/
+
+  g++ -v
+```
+
+#### CYGWIN
+Copy-Paste under cydwin
+~/.bashrc:
+```
+stty lnext ^q stop undef start undef`
+```
+
+~/.inputrc:
+```
+"\C-v": paste-from-clipboard
+```
+
+
+Note, this appears to be a Cygwin-specific solution. Linux users could use custom key bindings in gnome-terminal or konsole, or translation tables with xterm.
+
+
+Useful commands for reference:
+$ bind -p
+$ stty -a
