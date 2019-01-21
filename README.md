@@ -20,7 +20,7 @@ Aliases for all systems. Must end on *.aliases
 Location for export definition. Must end on *.export
 
 ##### private.d/
-Location for non-public stuff
+Location for non-public stuff. Define your private things here.
 
 ##### scripts.d/
 Location for scripts
