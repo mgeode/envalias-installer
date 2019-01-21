@@ -29,8 +29,15 @@ Location for scripts
 Location for operating system dependent definitions
 
 
-### Installing MAKE
+### Useful links to setup a ENV
 
+- [Tool JENV Java-ENV](http://www.jenv.be)
+- [Bash - Manipulating Strings](https://www.tldp.org/LDP/abs/html/string-manipulation.html)
+
+
+
+
+### Installing MAKE
 #### OSX
 ```
   xcode-select --install
@@ -50,9 +57,9 @@ Location for operating system dependent definitions
 
 
 #### Cygwin
-Auswahl nachstehender Tools im Installer:
+Use Cygwin-Installer and find the "Devel" (development)
+
 ```
-Find the "Devel" (development)
 g++ -v
 ```
 
@@ -61,12 +68,12 @@ Configure Copy-Paste under cygwin
 
 **~/.bashrc:**
 ```
-stty lnext ^q stop undef start undef`
+    stty lnext ^q stop undef start undef`
 ```
 
 **~/.inputrc:**
 ```
-"\C-v": paste-from-clipboard
+    "\C-v": paste-from-clipboard
 ```
 
 Note, this appears to be a Cygwin-specific solution. Linux users could use custom key bindings in gnome-terminal or konsole, or translation tables with xterm.
