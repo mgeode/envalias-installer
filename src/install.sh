@@ -37,7 +37,7 @@ cat src/os/${OS_TAG}.aliases >> ${TARGET_FILE}
 echo "" >> ${TARGET_FILE}
 
 if [ $(cat ${PROFSCRIPT} | grep bash.aliases| wc -l) -eq 0 ]; then
-    echo "Updating file: '${PROFSCRIPT}'"
+    echo "* Updating file: '${PROFSCRIPT}'"
     echo "#" >>${PROFSCRIPT}
     echo ". ${TARGET_FILE}" >>${PROFSCRIPT}
     echo "" >>${PROFSCRIPT}
@@ -45,8 +45,13 @@ fi
 
 
 # FINISH
-echo "- Finishing setup envs - exit [STRG]+[c]"
-echo "- Print aliases & exports - [return]"
-read
-cat ${TARGET_FILE} |more
+sleep 1
+clear
+echo "- Finishing setup envs - exit [return]"
+echo "- Print aliases & exports - [p]"
+read p
+
+if [ ! -z $p ]; then
+    cat ${TARGET_FILE} |more
+fi
 exit 0;
