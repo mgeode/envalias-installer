@@ -13,19 +13,19 @@ The Installation add a entry in your **/etc/profile** and create on new file **/
 
 ## Strukture
 
-### alias.d/
+##### alias.d/
 Aliases for all systems. Must end on *.aliases
 
-### exports.d/
+##### exports.d/
 Location for export definition. Must end on *.export 
 
-### private.d/
+##### private.d/
 Location for non-public stuff
 
-### scripts.d/
+##### scripts.d/
 Location for scripts
 
-### os/
+##### os/
 Location for operating system dependent definitions
 
 
