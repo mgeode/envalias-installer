@@ -30,18 +30,6 @@ Location for operating system dependent definitions
 
 
 ### Installing MAKE
-#### Linux
-```
-  apt-get install -g make
-  g++ -v
-```
-
-#### Cygwin
-Auswahl nachstehender Tools im Installer:
-```
-Find the "Devel" (development)
-g++ -v
-```
 
 #### OSX
 ```
@@ -54,22 +42,37 @@ g++ -v
   g++ -v
 ```
 
+#### Linux
+```
+  apt-get install -g make
+  g++ -v
+```
+
+
+#### Cygwin
+Auswahl nachstehender Tools im Installer:
+```
+Find the "Devel" (development)
+g++ -v
+```
+
 ##### CYGWIN-Special
-Copy-Paste under cydwin
-~/.bashrc:
+Configure Copy-Paste under cygwin
+
+**~/.bashrc:**
 ```
 stty lnext ^q stop undef start undef`
 ```
 
-~/.inputrc:
+**~/.inputrc:**
 ```
 "\C-v": paste-from-clipboard
 ```
 
-
 Note, this appears to be a Cygwin-specific solution. Linux users could use custom key bindings in gnome-terminal or konsole, or translation tables with xterm.
 
-
-Useful commands for reference:
-$ bind -p
-$ stty -a
+***Useful commands for reference:***
+```
+    $ bind -p
+    $ stty -a
+```
