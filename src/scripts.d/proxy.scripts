@@ -2,13 +2,20 @@ HOMELAN_ADD=${HOMELAN_ADD:-"192.168.1"}
 
 # PROXY
 proxyEnable() {
-    export HTTP_PROXY=${PROXY_HTTPADD}
-    export HTTPS_PROXY=${PROXY_HTTPADD}
-    export ALL_PROXY=${PROXY_HTTPADD}
-    export NO_PROXY=localhost
-    npm config set registry "${REGISTRY_NPM}"
-    npm config set proxy "http://${PROXY_HTTPADD}"
-    npm config set https-proxy "http://${PROXY_HTTPADD}"
+    if [ ! -z ${PROXY_HTTPADD} ]; then
+        export HTTP_PROXY=${PROXY_HTTPADD}
+        export HTTPS_PROXY=${PROXY_HTTPADD}
+        export ALL_PROXY=${PROXY_HTTPADD}
+        export NO_PROXY=localhost
+
+        npm config set proxy "http://${PROXY_HTTPADD}"
+        npm config set https-proxy "http://${PROXY_HTTPADD}"
+    fi
+
+    if [ ! -z ${REGISTRY_NPM} ]; then
+        npm config set registry "${REGISTRY_NPM}"
+    fi
+
     proxyStatus
 }
 proxyDisable() {
