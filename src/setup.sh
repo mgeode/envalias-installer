@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-FILE_EXPORT=src/private.d/user.exports
+FILE_EXPORT=src/private.d/_user.exports
 LIST_KEYS="USER_A USER_B HOMELAN_ADD PROXY_HTTPADD REGISTRY_NPM"
 
 question() {
