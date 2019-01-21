@@ -10,7 +10,35 @@ alias git_set_ssloff="git config http.sslVerify false"
 alias git_set_remote="git remote set-url origin https://$1@github.com/$2"
 
 alias git_overwrite="git fetch --all && git reset --hard origin/master && git pull origin master"
+alias git_branch="git checkout -b $1"
+alias git_backmaster="git checkout master"
+alias git_backbranch="git checkout $1"
+alias git_push_branch="git push --set-upstream origin $1"
 
 alias git_ls="git log --pretty=format:'{%n  \"commit\": \"%H\",%n  \"abbreviated_commit\": \"%h\",%n  \"tree\": \"%T\",%n  \"abbreviated_tree\": \"%t\",%n  \"parent\": \"%P\",%n  \"abbreviated_parent\": \"%p\",%n  \"refs\": \"%D\",%n  \"encoding\": \"%e\",%n  \"subject\": \"%s\",%n  \"sanitized_subject_line\": \"%f\",%n  \"body\": \"%b\",%n  \"commit_notes\": \"%N\",%n  \"verification_flag\": \"%G?\",%n  \"signer\": \"%GS\",%n  \"signer_key\": \"%GK\",%n  \"author\": {%n    \"name\": \"%aN\",%n    \"email\": \"%aE\",%n    \"date\": \"%aD\"%n  },%n " \"commiter\": {%n    \"name\": \"%cN\",%n    \"email\": \"%cE\",%n    \"date\": \"%cD\"%n  }%n},'
 
+git_copydir() {
+    if [ -z $2 ]; then
+        echo "Missing Target-DIR"
+        exit 1;
+    elif [ -z $1 ]; then
+        echo "Missing Source-DIR"
+        exit 1;
+    fi
 
+    WDIR=/tmp/.gitcopydir
+    TDIR=$2
+    SDIR=$1
+    if [ -d ${WDIR} ]; then
+        rm -Rf ${WDIR}
+    fi
+    mkdir -p ${WDIR}
+
+    cp -Rf ${SDIR}/* ${WDIR}/
+    GITLIST=$(find ${WDIR} -name ".git" -type d)
+    for delgit in GITLIST; do
+        echo "Removing .git: ${delgit}"
+        rm -Rf ${delgit}
+    done
+    cp -Rf ${WDIR}/* ${TDIR}/
+}
