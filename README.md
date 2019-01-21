@@ -9,7 +9,7 @@ Installing different Aliases on unixbased Environments as Linux, MacOSx or Windo
    Password: <sudo password>
 ```
 
-The Installation add a entry in your **/etc/profile** and create on new file **/etc/bash.aliases**.
+The Installation add a entry in your **~/.bashrc** or **~/.bash_profile (osX)** and create on new file **/etc/bash.aliases**.
 
 ## Strukture
 
