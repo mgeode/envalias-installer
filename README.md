@@ -54,7 +54,7 @@ g++ -v
   g++ -v
 ```
 
-#### CYGWIN
+##### CYGWIN-Special
 Copy-Paste under cydwin
 ~/.bashrc:
 ```
