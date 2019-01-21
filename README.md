@@ -1,4 +1,4 @@
-# Envalias-installer
+# EnvAlias-Installer
 Installing different Aliases on unixbased Environments as Linux, MacOSx or Windows Cygwin.
 
 ## Installation
