@@ -31,7 +31,7 @@ Location for operating system dependent definitions
 
 ### Useful links to setup a ENV
 
-- [Tool JENV Java-ENV](http://www.jenv.be)
+- [JENV - Manage your Java environment](http://www.jenv.be)
 - [Bash - Manipulating Strings](https://www.tldp.org/LDP/abs/html/string-manipulation.html)
 
 
