@@ -50,4 +50,3 @@ echo "- Print aliases & exports - [return]"
 read
 cat ${TARGET_FILE} |more
 exit 0;
-
