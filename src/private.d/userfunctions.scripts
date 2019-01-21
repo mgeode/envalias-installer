@@ -1,17 +1,20 @@
 
-# PROXY
+#USERS
 switchUserA() {
 	export USER=$USER_A
 }
+alias switchUserA=switchUserA
+
 switchUserB() {
 	export USER=$USER_B
 }
+alias switchUserB=switchUserB
 
 toggleUser() {
-  if [ "${USER_A}" = "${USER} ];then
+  if [ "${USER_A}" = "${USER}" ];then
     switchUserB
   else
     switchUserA
  fi
 }
-
+alias toggleUser=toggleUser
