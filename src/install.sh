@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 
-
+# VARS
 TARGET_FILE=/etc/bash.aliases
 UNAME_S=$(uname -s)
 
 OS_TAG=windows
+PROFSCRIPT=~/.bashrc
 if [ $UNAME_S = "Darwin" ];then
     OS_TAG=osx
+    PROFSCRIPT=~/.bash_profile
 elif [ $UNAME_S = "Linux" ];then
     OS_TAG=linux
 fi
@@ -34,10 +36,13 @@ echo "" >> ${TARGET_FILE}
 cat src/os/${OS_TAG}.aliases >> ${TARGET_FILE}
 echo "" >> ${TARGET_FILE}
 
-if [ $(cat /etc/profile | grep bash.aliases| wc -l) -eq 0 ]; then
-    echo "Updating file: '/etc/profile'"
-    echo ". ${TARGET_FILE}" >>/etc/profile
+if [ $(cat ${PROFSCRIPT} | grep bash.aliases| wc -l) -eq 0 ]; then
+    echo "Updating file: '${PROFSCRIPT}'"
+    echo "#" >>${PROFSCRIPT}
+    echo ". ${TARGET_FILE}" >>${PROFSCRIPT}
+    echo "" >>${PROFSCRIPT}
 fi
+
 
 # FINISH
 echo "- Finishing setup envs - exit [STRG]+[c]"
