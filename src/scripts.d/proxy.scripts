@@ -2,13 +2,13 @@ HOMELAN_ADD=${HOMELAN_ADD:-"192.168.1"}
 
 # PROXY
 proxyEnable() {
-    export HTTP_PROXY=proxy:8080
-    export HTTPS_PROXY=proxy:8080
-    export ALL_PROXY=proxy:8080
+    export HTTP_PROXY=${PROXY_HTTPADD}
+    export HTTPS_PROXY=${PROXY_HTTPADD}
+    export ALL_PROXY=${PROXY_HTTPADD}
     export NO_PROXY=localhost
-    npm config set registry "https://npm-repo/"
-    npm config set proxy "http://proxy:8080"
-    npm config set https-proxy "http://proxy:8080"
+    npm config set registry "${REGISTRY_NPM}"
+    npm config set proxy "http://${PROXY_HTTPADD}"
+    npm config set https-proxy "http://${PROXY_HTTPADD}"
     proxyStatus
 }
 proxyDisable() {
@@ -27,7 +27,7 @@ proxyStatus() {
     STATUS="disabled [-]"
   fi
 
-  echo " * Proxy-Settings are ${STATUS}!";
+  echo "Proxy-Settings are ${STATUS}!";
 }
 
 initProxy() {
