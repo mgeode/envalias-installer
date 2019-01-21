@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 FILE_EXPORT=src/private.d/user.exports
-LIST_KEYS="USER_A USER_B HOMELAN_IP PROXY_HTTPADD REGISTRY_NPM"
+LIST_KEYS="USER_A USER_B HOMELAN_ADD PROXY_HTTPADD REGISTRY_NPM"
 
 question() {
     echo "* Give me Name of '$1':"

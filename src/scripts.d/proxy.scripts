@@ -1,4 +1,4 @@
-HOMELAN_IP=${HOMELAN_IP:-"192.168.1"}
+HOMELAN_ADD=${HOMELAN_ADD:-"192.168.1"}
 
 # PROXY
 proxyEnable() {
@@ -32,7 +32,7 @@ proxyStatus() {
 
 initProxy() {
   #IF_HOMELAN
-  if [  "$(ifconfig |grep ${HOMELAN_IP}|grep -v grep|awk '{print $1}')" = "inet" ]; then
+  if [  "$(ifconfig |grep ${HOMELAN_ADD}|grep -v grep|awk '{print $1}')" = "inet" ]; then
     proxyDisable
   else
     proxyEnable
