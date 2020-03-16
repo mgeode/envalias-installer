@@ -4,10 +4,11 @@ alias doc="docker"
 alias doc-clean-all="docker system prune"
 alias doc-clean-images="docker image prune"
 alias doc-clean-container="docker container prune"
-alias doc-ps="docker ps | grep $1"
-alias doc-rm="docker rm -f $1"
-alias doc-img="docker images | grep $1"
-alias doc-rmi="docker rmi -f $1"
+### need 
+alias doc-ps="docker ps | grep "
+alias doc-rm="docker rm -f "
+alias doc-img="docker images | grep "
+alias doc-rmi="docker rmi -f "
 
 # SWARM
-alias dsw-ps="docker service ls | grep $1"
+alias dsw-ps="docker service ls | grep "

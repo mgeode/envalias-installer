@@ -1,8 +1,6 @@
 
 # Files
-alias fhere="find . -name "
-alias fold="find . -mtime "
-alias fsize="find . -size +"
+alias find_here="find . -name "
+alias find_old="find . -mtime "
+alias find_size="find . -size +"
 
-# Prozess
-alias psid="ps -ef | grep $1 | grep -v grep | awk '{ print $2 }'"

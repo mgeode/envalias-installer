@@ -1,5 +1,9 @@
 
 #USERS
+# USER
+export USERMAIL='@yourdomain.de'
+export USERNAME='YOUR NAME'
+
 switchUserA() {
 	export USER=$USER_A
 }

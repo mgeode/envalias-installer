@@ -8,13 +8,12 @@ alias git_set_user="git config --global user.name \"$USER\" && git config --glob
 alias git_set_credits="git config credential.helper store"
 alias git_set_ssloff="git config http.sslVerify false"
 alias git_set_remote="git remote set-url origin https://$1@github.com/$2"
-
+alias git_super="gad && gcm \"dev or debug by $USER on $(date +%H:%M)\" && gps"
 alias git_overwrite="git fetch --all && git reset --hard origin/master && git pull origin master"
-alias git_branch="git checkout -b $1"
-alias git_backmaster="git checkout master"
-alias git_backbranch="git checkout $1"
-alias git_push_branch="git push --set-upstream origin $1"
-
+## need $1
+alias git_branch="git checkout -b"
+alias git_backbranch="git checkout"
+alias git_push_branch="git push --set-upstream origin"
 alias git_ls="git log --pretty=format:'{%n  \"commit\": \"%H\",%n  \"abbreviated_commit\": \"%h\",%n  \"tree\": \"%T\",%n  \"abbreviated_tree\": \"%t\",%n  \"parent\": \"%P\",%n  \"abbreviated_parent\": \"%p\",%n  \"refs\": \"%D\",%n  \"encoding\": \"%e\",%n  \"subject\": \"%s\",%n  \"sanitized_subject_line\": \"%f\",%n  \"body\": \"%b\",%n  \"commit_notes\": \"%N\",%n  \"verification_flag\": \"%G?\",%n  \"signer\": \"%GS\",%n  \"signer_key\": \"%GK\",%n  \"author\": {%n    \"name\": \"%aN\",%n    \"email\": \"%aE\",%n    \"date\": \"%aD\"%n  },%n " \"commiter\": {%n    \"name\": \"%cN\",%n    \"email\": \"%cE\",%n    \"date\": \"%cD\"%n  }%n},'
 
 git_copydir() {
@@ -42,3 +41,4 @@ git_copydir() {
     done
     cp -Rf ${WDIR}/* ${TDIR}/
 }
+alias git_copydir=git_copydir

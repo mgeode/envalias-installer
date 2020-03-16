@@ -1,0 +1,17 @@
+
+setJava() {
+    CHK=$(which jenv)
+    # JAVA
+    if [ $? -eq 0 ]; then
+        export PATH="$PATH:$HOME/.jenv/bin"
+        eval "$(jenv init -)"
+        alias jprint="jenv versions"
+        alias javal="jenv local"
+        alias javag="jenv global"
+    else
+        export PATH=$PATH:$JAVA_HOME/bin
+        export JAVA_HOME=$(/usr/libexec/java_home)
+    fi
+    alias javav="java -version"
+}
+setJava
